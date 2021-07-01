@@ -2,7 +2,7 @@
 
 ## Installation
 
-### Data Base Package
+### Packages
 
 ```bash
 
