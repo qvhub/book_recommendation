@@ -1,0 +1,10 @@
+__pycache__
+.ipynb_checkpoints
+.venv_book
+.vscode
+source
+model_inference
+search
+training
+knn_fited.pkl
+sparse_matrix.npz

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <title>Result new user</title>
+</head>
+<body>
+    <p class="text-center h3">Well!</p>
+    <p class="text-center h3">Here it is your next read</p>
+
+    <main>
+        <div class="container col-6">
+<div class="row">
+    {% for i in result %}
+    
+        <div class="col-sm-4">
+            <div class="card">
+                <img class="card-img-top" src="{{i['small_image_url']}}" alt="">
+                <div class="card-body">
+                    <h5 class="card-title">{{i['title']}}</h2>
+                    <p class="card-text">{{i['authors']}}</p>
+            </div>    
+            </div>
+        </div>
+      
+    {% endfor %}
+</div>
+</div>
+</main>
+</body>
+</html>
