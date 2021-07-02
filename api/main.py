@@ -119,13 +119,23 @@ async def test(request: Request, num: int = Form(...)):
 @app.get("/")
 async def form_post(request: Request):
 
-    book_title = df_books_infos['original_title'].unique()
+    book_title = df_books_infos['title'].unique()
+
 
     tag_name = df_books_infos['new_tag'].unique()
 
+    list_tag_name = []
+
+    for i in tag_name:
+        if i == '':
+            pass
+        else:
+            list_tag_name.append(i)
+    
+
     #list_category = ['cat1','cat2','cat3','cat4','cat5']
 
-    return templates.TemplateResponse('new_user.html', context={'request': request, 'cat':tag_name, 'book_title':book_title})
+    return templates.TemplateResponse('new_user.html', context={'request': request, 'cat':list_tag_name, 'book_title':book_title})
 
 # B O O K - L I K E D
 @app.post("/new-user-book-liked-result")
@@ -134,6 +144,9 @@ async def result_new_user(request: Request, name_book_liked: str = Form(...)):
     print(name_book_liked)
     print('----------------')
     result = content_base_1(df_books_infos, name_book_liked)
+    print('----------------')
+    print('book liked form')
+    print('----------------')
     return templates.TemplateResponse('result.html', context={'request': request,'result': result})
 
 
@@ -154,7 +167,7 @@ async def result_new_user(request: Request, cat_form: list = Form(...)):
     elif len(cat_form) == 3:
         result = content_base_4(df_books_infos, cat_form[0], cat_form[1], cat_form[2])
     else:
-        result = "Plz put just maximum 3 cat"
+        result = "Maximum 3 categories"
     return templates.TemplateResponse('result.html', context={'request': request,'result': result})
 
 if __name__ == "__main__":

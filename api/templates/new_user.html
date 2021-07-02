@@ -17,17 +17,17 @@
 
             <h1>Hi!</h1>
 <div class="row">
-            <div class="col-sm-6">
+            <div class="col-sm-6 p-4">
 
-                <div class="card">
+                <div class="card p-4">
 
-                <h2>Select your last book liked </h2>
+                <h2 class="m-3">Select your last book liked </h2>
 
                 <form class="form-floating" method="post" action="/new-user-book-liked-result">
 
-                    <select class="nav-link dropdown-toggle col-5" name="name_book_liked">
+                    <select class="nav-link dropdown-toggle col-12" name="name_book_liked">
 
-                        <option value="Book liked">--Selectioner the last book liked club--</option>
+                        <option value="Book liked">-- Selectioner the last book liked --</option>
 
                         {% for i in book_title %}
                         <option value="{{ i }}">{{ i }}</option>
@@ -35,17 +35,17 @@
 
                     </select>
 
-                    <input class="btn btn-primary" type="submit">
+                    <input class="btn btn-primary m-3" type="submit">
 
                 </form>
                 </div>
             </div>
 
-            <div class="col-sm-6">
+            <div class="col-sm-6 p-4">
 
-                <div class="card">
+                <div class="card p-4">
 
-                <h2>Your favorite topics </h2>
+                <h2 class="m-3">Your favorite topics </h2>
 
                 <form class="form-floating" method="post" action="/new-user-cat-result">
                     <div>
@@ -57,7 +57,7 @@
 
                         {% endfor %}
                     </div>
-                    <input class="btn btn-primary" type="submit">
+                    <input class="btn btn-primary m-3" type="submit">
 
                 </form>
 
